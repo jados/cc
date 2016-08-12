@@ -16,7 +16,7 @@
 	};
 
 	var _createInfo = function(item, def){
-		if(def) var result = $('<div class="result left"><input type="number" value="1"></div>');
+		if(def) var result = $('<div class="result left"><input type="number" id="cresult" value="1"></div>');
 		else var result = $('<div class="result left" id="amt_'+ item.code +'">0</div>');
 		var flag = $('<div class="flag left"><img src="/images/flags/'+item.code+'.png" /><span>'+item.code+'</span></div>');
 		var unit = $('<div class="unit">'+ item.name +'</div>');
