@@ -208,7 +208,7 @@
 			_closeList();
 		});
 
-		$('#cresult').on('change', function(){
+		$('#cresult').keypress(function(){
 			$('[id^="amt_"').each(function(){
 				var code = $(this).attr('id').split('_')[1];
 				_fetchRate(code, 0);
