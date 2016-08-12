@@ -88,7 +88,7 @@
 		var api = '/cc/r/'+ def.code +'/'+ target + '/' + force;
 		$.ajax({url: api})
 		.done(function(r){
-			var samount = $('input[type=number]').val();
+			var samount = $('#cresult').val();
 			var tamount = samount * r.rate;
 			$('#amt_' + r.target).html(tamount.toFixed(2));
 		});
