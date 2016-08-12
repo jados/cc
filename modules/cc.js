@@ -20,6 +20,9 @@ Currency.d2j = function(obj){
 };
 
 Currency.saveFile = function(scur, tcur, data){
+	if(! fs.existsSync(Currency._savepath)){
+		fs.mkdirSync(Currency._savepath);
+	}
 	var fp = Currency._savepath + '/' + scur + tcur;
 	var wstream = fs.createWriteStream(fp);
 	wstream.write(data);

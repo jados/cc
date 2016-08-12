@@ -4,7 +4,7 @@ var Currency = require('../modules/cc');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Currency Converter' });
 });
 
 module.exports = router;
