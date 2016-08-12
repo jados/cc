@@ -48,7 +48,7 @@
 				var item = {code: $(this).find('span').html(),
 							name: $(this).find('.unit').html()
 							};
-				$.confirm('ddddd', function(ans){
+				$.confirm('移除此货币？', function(ans){
 					if(ans){
 						box.remove();
 						_removeFavorite(item);
@@ -196,7 +196,7 @@
 			_closeList();
 		});
 
-		$('input[type=number]').bind('keyup', function(){
+		$('input[type=number]').keyup(function(){
 			$('[id^="amt_"').each(function(){
 				var code = $(this).attr('id').split('_')[1];
 				_fetchRate(code, 0);

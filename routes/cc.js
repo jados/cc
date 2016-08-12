@@ -18,6 +18,7 @@ router.get('/r/:scur/:tcur/:force', function(req,res){
 			d.target = tcur;
 			res.json(d);
 		}).catch(function(e){
+			console.log('ee',e.code);
 			Currency.errHandler(e, scur, tcur)
 			.then(function(d){
 				var d = Currency.d2j(d);
