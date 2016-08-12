@@ -208,7 +208,7 @@
 			_closeList();
 		});
 
-		$('input[type=number]').on('keyup touchend', function(){
+		$('#cresult').on('change', function(){
 			$('[id^="amt_"').each(function(){
 				var code = $(this).attr('id').split('_')[1];
 				_fetchRate(code, 0);
