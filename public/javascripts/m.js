@@ -36,15 +36,8 @@
 	var _createBox = function(item, target){
 		var box = $('<div class="'+ target +'"></div>');
 		var info = _createInfo(item, false);
-		return _fillBox(info, box);
-	};
-
-	var _setList = function(){
-		$('.list').empty();
-		for(var i = 0; i < types.length; i++){
-			if(def.code == types[i].code) continue;
-			var box = _createBox(types[i], 'currency');
-			box.bind('taphold', function(){
+		box = _fillBox(info, box);
+		box.on('taphold', function(){
 				var item = {code: $(this).find('span').html(),
 							name: $(this).find('.unit').html()
 							};
@@ -55,6 +48,25 @@
 					}
 				});
 			});
+		box.click(function(){
+			var item = {}, def_item = def;
+			item.code = $(this).find('span').html();
+			item.name = $(this).find('.unit').html();
+			_setDefault(item.code, item.name);
+			_getDefault();
+			var content = _createInfo(def_item, false);
+			_fillBox(content, $(this));
+			_getRate();
+		});
+		return box;
+	};
+
+	var _setList = function(){
+		$('.list').empty();
+		for(var i = 0; i < types.length; i++){
+			if(def.code == types[i].code) continue;
+			var box = _createBox(types[i], 'currency');
+			
 			$('.list').append(box);
 		}
 	};
@@ -103,7 +115,7 @@
 				$.each(section, function(code, info){
 					var item = _createItem(code, info.name);
 					sec.append(item);
-					item.bind('click', function(){
+					item.click(function(){
 						var newbie = {code: code, name: info.name};
 						_closeList();
 						var box = _createBox(newbie, 'currency');
@@ -189,10 +201,10 @@
 		_getRate();
 		_getList();
 
-		$('#plus').bind('click', function(){
+		$('#plus').click(function(){
 			_openList();
 		});
-		$('#close').bind('click', function(){
+		$('#close').click(function(){
 			_closeList();
 		});
 
@@ -201,17 +213,6 @@
 				var code = $(this).attr('id').split('_')[1];
 				_fetchRate(code, 0);
 			});
-		});
-
-		$('.currency').bind('click', function(){
-			var item = {}, def_item = def;
-			item.code = $(this).find('span').html();
-			item.name = $(this).find('.unit').html();
-			_setDefault(item.code, item.name);
-			_getDefault();
-			var content = _createInfo(def_item, false);
-			_fillBox(content, $(this));
-			_getRate();
 		});
 	};
 
