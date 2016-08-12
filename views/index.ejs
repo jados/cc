@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include header.ejs %>
+
+<div class="page">
+	<div class="head">
+		<div class="button left"><img src="/images/plus.png" id="plus" /></div>
+		<div class="title left">汇率通</div>
+		<div class="button left"></div>
+	</div>
+	<div class="cc">
+		<div class="flag left"><img src="/images/flags/USD.png" /><span>USD</span></div>
+		<div class="result left"><input type="number" value="1"></div>
+		<div class="clear"></div>
+		<div class="unit">美元</div>
+	</div>
+	<div class="list">
+		<div class="currency">
+			<div class="flag left"><img src="/images/flags/USD.png" /><span>USD</span></div>
+			<div class="result left">1499</div>
+			<div class="clear"></div>
+			<div class="unit">美元</div>
+		</div>
+	</div>
+</div>
+
+<div class="all">
+	<div class="head">
+		<div class="button left"><img src="/images/close.png" id="close" /></div>
+		<div class="title left">添加货币</div>
+		<div class="button left"></div>
+	</div>
+	<div class="search">
+		<input type="text" id="search" placeholder="search for.." />
+	</div>
+	<div class="clist"></div>
+</div>
+
+<% include footer.ejs %>

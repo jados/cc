@@ -1,8 +1,184 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0px auto;
+	background-color: #333;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+input[type=number] {
+	border: 0;
+	width: 5em;
+	background-color: #fff;
+	font-size: 1.5em;
+	text-align: right;
+}
+.page {
+	width: 100%;
+}
+.head {
+	height: 3em;
+	padding: 1em;
+	background-color: #FEFEFE;
+}
+.head .button{
+	margin-left: 1em;
+}
+.title {
+	width: 70%;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.button {
+	width: 15%;
+}
+.button img {
+	width: 2em;
+}
+.left {
+	float: left;
+}
+.cc {
+	color: #888;
+	padding: 1em;
+	background-color: #FEFEFE;
+}
+.flag {
+	width: 35%;
+	display: table;
+}
+.flag img {
+	width: 4em;
+}
+.flag span {
+	display: table-cell;
+	vertical-align: middle;
+}
+.result {
+	width: 65%;
+	font-size: 2em;
+	height: 2em;
+	line-height: 2em;
+	text-align: right;
+}
+.unit {
+	color: #aaa;
+	text-align: right;
 }
 
-a {
-  color: #00B7FF;
+.clear {
+	clear: both;
+}
+
+.list {
+	width: 100%;
+	
+	color: #eee;
+}
+
+.currency {
+	padding: 1em;
+
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.currency:active {
+    /*position:relative;
+    top:3px;*/
+    background-color: #131313;
+}
+
+.all {
+	display: none;
+	background-color: #FFF;
+}
+.search {
+	width: 100%;
+	text-align: center;
+
+}
+.search input {
+	width: 90%;
+	border: 0;
+	border-bottom: 1px solid #AAA;
+	background-color: #fff;
+	font-size: 1.5em;
+}
+
+.clist {
+	width: 100%;
+	background-color: #eee;
+}
+.cflag {
+	display: table;
+}
+.cflag img {
+	width: 4em;
+}
+.cflag span {
+	padding: 1em;
+	display: table-cell;
+	vertical-align: middle;
+}
+.index {
+	padding: .5em;
+	font-weight: bold;
+	background-color: #fff;
+}
+.item {
+	padding: .5em .5em .5em 1em;
+
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.item:active {
+	background-color: #AAA;
+}
+
+.msgbox {
+	position: absolute;
+	width: 20em;
+	top: 20em;
+	left: 20em;
+	padding: 2em;
+	font-weight: bold;
+	background-color: rgba(146, 146, 146, 0.8);
+	opacity: 0;
+
+	-webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+}
+.msgbox.fadein {
+	opacity: 1;
+}
+.msgbox.fadeout {
+	opacity: 0;
+}
+
+::-webkit-input-placeholder {
+   text-align: right;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: right;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: right;
+}
+
+:-ms-input-placeholder {  
+   text-align: right;
 }

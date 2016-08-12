@@ -1,0 +1,9 @@
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+var a = [{code: 'AED', name: 'abc'}, {code: 'USD', name: 'aaa'}, {code: 'CNY', name: 'zzz'}];
+var r = {code: 'USD', name: 'aaa'};
+console.log($.grep(a, function(item){
+	return item != r;
+}));
+</script>
